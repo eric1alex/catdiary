@@ -76,15 +76,13 @@ const Post = () => {
           <div className="font-sans text-sm md:text-base">
             {renderContent(post.content)}
           </div>
-          <div className="flex gap-2 mt-8 pt-6 border-t border-border">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-2 py-0.5 rounded-sm bg-secondary text-secondary-foreground"
-              >
-                {tag}
-              </span>
-            ))}
+          <div className="mt-8 pt-6 border-t border-border">
+            <Link
+              to="/resources"
+              className="text-sm text-muted-foreground underline hover:text-foreground transition-colors"
+            >
+              resources i use
+            </Link>
           </div>
         </article>
       </main>
