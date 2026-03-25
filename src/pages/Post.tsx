@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import BlogHeader from "@/components/BlogHeader";
 import { posts } from "@/data/posts";
 
@@ -26,36 +27,6 @@ const Post = () => {
     day: "numeric",
   });
 
-  // Simple markdown-like rendering for bold text
-  const renderContent = (content: string) => {
-    return content.split("\n\n").map((paragraph, i) => {
-      const processed = paragraph
-        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-        .replace(/\n- /g, "<br/>• ")
-        .replace(/\n(\d+)\. /g, "<br/>$1. ");
-
-      if (paragraph.startsWith("- ") || paragraph.startsWith("1.")) {
-        return (
-          <div
-            key={i}
-            className="text-foreground/85 leading-relaxed my-3 pl-2"
-            dangerouslySetInnerHTML={{
-              __html: processed.replace(/^- /, "• "),
-            }}
-          />
-        );
-      }
-
-      return (
-        <p
-          key={i}
-          className="text-foreground/85 leading-relaxed my-4"
-          dangerouslySetInnerHTML={{ __html: processed }}
-        />
-      );
-    });
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <BlogHeader />
@@ -73,8 +44,8 @@ const Post = () => {
           <h1 className="text-2xl md:text-3xl font-semibold text-foreground mt-2 mb-6">
             {post.title}
           </h1>
-          <div className="font-sans text-sm md:text-base">
-            {renderContent(post.content)}
+          <div className="prose prose-sm md:prose-base dark:prose-invert max-w-none prose-p:leading-relaxed prose-li:leading-relaxed prose-a:text-foreground hover:prose-a:text-muted-foreground prose-a:transition-colors">
+            <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>
           <div className="mt-8 pt-6 border-t border-border">
             <Link

@@ -1,3 +1,5 @@
-# Welcome to your Lovable project
+# CAT Prep Diary
 
-TODO: Document your project here
+A personal blog documenting my CAT (Common Admission Test) preparation journey.
+
+Built with React, Vite, Tailwind CSS, and TypeScript.
