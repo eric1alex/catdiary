@@ -3,6 +3,7 @@ title: "documenting the journey. "
 date: "2026-03-25"
 excerpt: ""
 tags: []
+studyTime: 0
 ---
 
 okay so the whole purpose of this website is **documenting.** nothing else.

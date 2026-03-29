@@ -3,6 +3,7 @@ title: "learning multiplication from scratch"
 date: "2026-03-26"
 excerpt: "2 years since I studied and I cant even do basic calculations- "
 tags: ["quants"]
+studyTime: 42
 ---
 
 fun fact... the last time I studied was like 2 years ago- right after bba i started working and never touched a book. with ai and all this bs i had 0 use of my brain for any math stuff and now doing mental maths or even basic calculations feels like some big task. but I have to say it's fun like it's something I'm interested in so it makes this whole process interesting

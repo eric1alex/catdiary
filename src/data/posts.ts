@@ -7,6 +7,7 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   tags: string[];
+  studyTime: number;
 }
 
 interface PostFrontmatter {
@@ -14,6 +15,7 @@ interface PostFrontmatter {
   date: string;
   excerpt: string;
   tags?: string[];
+  studyTime?: number;
 }
 
 // Vite feature: import all markdown files as raw text
@@ -29,6 +31,7 @@ export const posts: BlogPost[] = Object.entries(mdFiles).map(([path, rawContent]
     date: attributes.date,
     excerpt: attributes.excerpt,
     tags: attributes.tags || [],
+    studyTime: Number(attributes.studyTime) || 0,
     content: body,
   };
 }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
